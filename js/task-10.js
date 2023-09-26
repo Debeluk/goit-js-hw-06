@@ -5,15 +5,24 @@ function getRandomHexColor() {
 }
 
 function createBoxes (amount) {
+  if (amount <=0) {
+    alert('Значення не може бути від`ємним');
+    return;
+  }
+  destroyBoxes();
   const boxesDiv = document.getElementById('boxes');
   const boxesSize = 30;
+
+  const boxesAr = [];
 
   for (let i = 0; i < amount; i+= 1) {
     const box = document.createElement('div');
     box.style.width = box.style.height = `${boxesSize + i*10}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxesDiv.appendChild(box);
+    boxesAr.push(box);
   }
+
+  boxesDiv.append(...boxesAr);
 };
 
 function destroyBoxes() {

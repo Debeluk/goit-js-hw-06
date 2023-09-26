@@ -1,6 +1,6 @@
 const loginBase = document.querySelector('.login-form');
 loginBase.addEventListener('submit', function(event) {
-    event.preventDefault();                
+    event.preventDefault();
     // Щоб сторінка не перезавантажувалась
 
 const emailInput = loginBase.elements.email;
@@ -15,6 +15,6 @@ else {
         password: passwordInput.value
     };
     console.log(formObj);
-    loginBase.value.reset();
+    loginBase.reset();
 }
 });
